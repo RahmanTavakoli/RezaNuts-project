@@ -1,0 +1,248 @@
+@media (max-width: 576px) {
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../images/set-pecan-pistachios-almond-peanut-cashew-pine-nuts-lined-up-assorted-nuts-dried-fruits-mini-different-bowls.jpg') center/cover no-repeat;
+        height: 100vh;
+    }
+    .other-page-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../images/set-pecan-pistachios-almond-peanut-cashew-pine-nuts-lined-up-assorted-nuts-dried-fruits-mini-different-bowls.jpg') center/cover no-repeat;
+        height: 30vh;
+    }
+
+    .header-content {
+        margin-top: 10px;
+    }
+
+    .shopingCard {
+        top: -46px;
+    }
+    
+}
+
+@media (min-width: 576px) {
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../images/assorted-nuts-background.jpg') center/cover no-repeat;
+        height: 100vh;
+    }
+    .other-page-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../images/assorted-nuts-background.jpg') center/cover no-repeat;
+        height: 30vh;
+    }
+
+    .header-content {
+        margin-top: 10px;
+    }
+    .shopingCard {
+        top: -46px!important;
+    }
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 768px) { 
+    .hid-box {
+        bottom: 0;
+        position: relative;
+        transition: all .6s ease-out;
+        background: #5959597c;
+        height: 100%;
+        width: 100%;
+    }
+
+    .divider{
+        height: 30vh;
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(2, 2, 2, 0.25)), url('../images/assorted-nuts-background.jpg') center/cover no-repeat;
+        height: 100vh;
+    }
+    
+    .other-page-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(2, 2, 2, 0.25)), url('../images/assorted-nuts-background.jpg') center/cover no-repeat;
+        height: 30vh;
+    }
+
+    .lg-md-navbar {
+        width: 500px !important;
+    }
+
+    .header-content {
+        margin-top: 10px;
+    }
+    .shopingCard {
+        top: -80px!important;
+    }
+
+    .space-title {
+        font-size: 8rem;
+        font-family: myfont;
+    }
+    .cd-main-content {
+        padding-top: 70px;
+    }
+    header {
+        height: 70px;
+    }
+
+    #cd-logo {
+        margin: 0px 0 0 30px;
+    }
+
+    #cd-top-nav {
+        display: block;
+    }
+
+    #cd-menu-trigger {
+        width: 110px;
+        padding-left: 1.25em;
+    }
+
+    #cd-menu-trigger .cd-menu-text {
+        display: inline-block;
+        line-height: 70px;
+    }
+
+    #cd-menu-trigger .cd-menu-icon {
+        left: auto;
+        right: 1.25em;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    #cd-lateral-nav .cd-navigation {
+        margin: 20px 0;
+    }
+
+}
+
+
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../images/assorted-nuts-background.jpg') center/cover no-repeat;
+        height: 100vh;
+        z-index: -55;
+    }
+    .other-page-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../images/assorted-nuts-background.jpg') center/cover no-repeat;
+        height: 30vh;
+        z-index: -55;
+    }
+
+    .lg-md-navbar {
+        width: 1000px !important;
+    }
+
+    .nav-background {
+        width: 1200px !important;
+    }
+
+    .header-content {
+        margin-top: 200px;
+    }
+
+    .circle-btn a {
+        padding: 110px 70px;
+    }
+    .shopingCard {
+        top: -80px!important;
+    }
+    .search-box-input{
+        top: 0!important;
+      
+    }
+    .search-box-input:focus{
+        top: 0!important;
+    }
+
+    .hero-text-L1 {
+        font-size: 2rem!important;
+        font-family: myfont;
+    }
+    .space-title {
+        width: 700px;
+        font-size: 10rem;
+        font-family: myfont;
+    }
+    .product-category .card {
+        border-radius: 50px;
+        height: 60px;
+    }
+
+    .product-category-title {
+        font-size: 1.3em;
+    }
+
+    .title-section {
+        margin: 60px 0;
+    }
+
+}
+@media (max-width: 992px) {
+   
+    .product-category .card {
+        border-radius: 50px;
+        height: 60px;
+    }
+
+    .product-category-title {
+        font-size: 1.3em;
+    }
+
+    .product-category-img {
+        width: 105px;
+        height: 70px;
+        z-index: 999;
+    }
+
+    .product-category-img-candy {
+        width: 105px;
+        height: 70px;
+        z-index: 998;
+    }
+
+    .product-category-img-dried-fruit {
+        width: 130px;
+        height: 65px;
+        z-index: 996;
+    }
+
+    .product-category-img-gummy {
+        width: 115px;
+        height: 65px;
+        z-index: 997;
+    }
+
+    .product-category .card {
+        height: 50px;
+        margin: 10px 0;
+    }
+}
+
+
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+}
+
+/* Extra large devices (large desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    .main-border{
+        width: 1350px;
+       margin: 40px auto;
+    }
+    .footer-container{
+        width: 1400px;
+       margin: 40px auto;
+    }
+    
+}

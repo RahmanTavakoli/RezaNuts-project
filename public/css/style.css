@@ -1,0 +1,47 @@
+@font-face {
+    font-family: myfont;
+    src: url('../fonts/collection-persian-web-font/other/pixelboy-Abasan.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: bardia;
+    src: url('../fonts/collection-persian-web-font/other/pixelboy-BBardiya.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Monoton;
+    src: url('../fonts/Monoton/Monoton-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'bardia', sans-serif;
+}
+
+.bardia-font{
+    font-family: bardia;
+}
+.row{
+    direction: rtl;
+}
+.pointer{
+    cursor: pointer;
+}
+
+.divider-line{
+    height: 23px;
+    width: .5px;
+    background: rgba(78, 78, 78, 0.301);
+    margin: auto 6px;
+}
+
+.main-border{
+    border: 1px solid rgba(173, 94, 3, 0.247);
+    margin:  20px;
+    border-radius: 20px;
+}
+
+
