@@ -24,6 +24,11 @@
 .bardia-font{
     font-family: bardia;
 }
+
+.myFont{
+    font-family: myfont;
+}
+
 .row{
     direction: rtl;
 }

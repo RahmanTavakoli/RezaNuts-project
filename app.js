@@ -2,11 +2,13 @@ const path = require('path');
 
 const express = require('express');
 const expressLayout = require('express-ejs-layouts');
-dotEnv = require('dotenv');
+const dotEnv = require('dotenv');
 const morgan = require('morgan');
 
 const ConnectDB = require('./config/db');
-const indexRoutes = require('./routes');
+const shopRoutes = require('./routes/routes');
+const userProfileRoutes = require('./routes/userProfile');
+const adminProfileRoutes = require('./routes/adminProfile');
 
 //* Load Config
 dotEnv.config({path: "./config/config.env"});
@@ -24,14 +26,17 @@ if(process.env.NODE_ENV === "development"){
 //* view Engine 
 app.use(expressLayout)
 app.set('view engine' , 'ejs');
-app.set("layout" , "./layouts/mainLayout")
+app.set("layout" , "./layouts/mainLayout");
 app.set('views' , 'views');
 
 //* static folder
 app.use(express.static(path.join(__dirname,"public")));
 
 //* Routes
-app.use(indexRoutes);
+app.use(shopRoutes);
+app.use("/user" , userProfileRoutes);
+app.use("/admin" , adminProfileRoutes);
+app.use("/dashboard" , adminProfileRoutes);
 
 const PORT = process.env.PORT || 3000;
 

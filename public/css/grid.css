@@ -1865,7 +1865,7 @@ h1 {
 
 
 /* ----------           login & Register          --------- */
-#body {
+.login-section{
     margin: 0;
     padding: 0;
     display: flex;
@@ -1910,11 +1910,11 @@ label {
 input {
     width: 60%;
     height: 20px;
-    background: #e0dede;
+    background: #ffffff;
     justify-content: center;
     display: flex;
     margin: 20px auto;
-    padding: 10px;
+    padding: 20px;
     border: none;
     outline: none;
     border-radius: 5px;
@@ -2226,5 +2226,10 @@ h2 small {
 .product-comment h2{
   text-align: right;
 }
-  
+
+
+
+/* ------------------------- */
+
+
 
