@@ -29,6 +29,10 @@ app.set('view engine' , 'ejs');
 app.set("layout" , "./layouts/mainLayout");
 app.set('views' , 'views');
 
+//* BodyPaser
+app.use(express.urlencoded({ extended: false }));
+const bodyPaser = require('body-parser');
+
 //* static folder
 app.use(express.static(path.join(__dirname,"public")));
 

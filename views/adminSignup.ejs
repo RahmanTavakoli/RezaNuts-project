@@ -1,27 +1,27 @@
 <div id="main">
-
-        <!-- Sign up form -->
-        <section class="signup ">
-            <div id="container">
+    <!-- Sign up form -->
+    <section class="signup " dir="rtl">
+        <%- include("./includes/validationError.ejs") %>
+        <div id="container">
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">ثبت نام</h2>
-                        <form method="POST" class="register-form" id="register-form">
+                        <form method="POST" action="/admin/signup" class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="نام"/>
+                                <input type="text" name="adminName" id="name" placeholder="نام"/>
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="ایمیل"/>
+                                <input type="email" name="adminEmail" id="email" placeholder="ایمیل"/>
                             </div>
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="رمز عبور"/>
+                                <input type="password" name="adminPass" id="pass" placeholder="رمز عبور"/>
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="re_pass" id="re_pass" placeholder="تکرار رمز عبور"/>
+                                <input type="password" name="adminRepass" id="re_pass" placeholder="تکرار رمز عبور"/>
                             </div>
                             <!-- <div class="form-group">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />

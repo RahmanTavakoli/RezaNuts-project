@@ -21,6 +21,10 @@
     font-family: 'bardia', sans-serif;
 }
 
+body{
+    background-color: #f6f8fc!important;
+}
+
 .bardia-font{
     font-family: bardia;
 }
@@ -44,7 +48,7 @@
 }
 
 .main-border{
-    border: 1px solid rgba(173, 94, 3, 0.247);
+    box-shadow: rgba(0, 0, 0, 0.055) 0px 4px 12px;
     margin:  20px;
     border-radius: 20px;
 }
