@@ -1,8 +1,8 @@
-<% if(typeof errors != 'undefined') {%> <% errors.forEach(function(err) { %>
+<% if(typeof errors != 'undefined') {%> <% errors.forEach(function(error) { %>
 
     <div class="d-flex justify-content-between alert alert-warning alert-dismissible fade show">
         <div class=" " role="alert">
-            <%= err %>
+            <%= error.message %>
         </div>
         <div class="d-flex justify-content-start">
             <a type="button" class="close text-decoration-none fs-4" data-dismiss="alert" aria-label="Close">

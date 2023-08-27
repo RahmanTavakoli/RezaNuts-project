@@ -1,26 +1,11 @@
+const e = require('express');
 const {
     Router
 } = require('express');
-const Yup = require('yup');
+
+const Admin = require('../models/admin');
 
 const router = new Router();
-
-const AdminSchema = Yup.object().shape({
-    adminName: Yup.string()
-        .required("نام کاربری الزامی است")
-        .min(4, "نام کاربری نباید کمتر از 4 کاراکتر باشد")
-        .max(255, "نام کاربری نباید بیشتر از 255 کاراکتر باشد"),
-    adminEmail: Yup.string()
-        .email("ایمیل معتبر نیست")
-        .required("ایمیل الزامی است"),
-    adminPass: Yup.string()
-        .required("رمز ورود الزامی است")
-        .min(4, "رمز ورود نباید کمتر از 4 کاراکتر باشد")
-        .max(255, "رمز ورود نباید بیشتر از 255 کاراکتر باشد"),
-    adminRepass: Yup.string()
-        .required("تکرار رمز ورود یکسان نیست")
-        .oneOf([Yup.ref("adminPass"), null]),
-});
 
 // @desc Admin Login Page
 // @route GET/Admin/login
@@ -35,34 +20,40 @@ router.get("/login", (req, res) => {
 // @route GET/admin/signup
 router.get("/signup", (req, res) => {
     res.render("adminSignup", {
-        pageTitle: "ورود به بخش مدیریت ",
+        pageTitle: " ثبت نام بخش مدیریت ",
         path: "/admin"
     });
 });
 
 // @desc Admin Login Page
 // @route POST/admin/signup
-router.post("/signup", (req, res) => {
-    AdminSchema
-        .validate(req.body)
-        .then((result) => {
-           res.redirect("/admin/login")
-        })
-        .catch((err) => {
-            console.log(err.errors);
-            res.render("adminSignup", {
-                pageTitle: "ورود به بخش مدیریت ",
-                path: "/admin",
-                errors: err.errors
+router.post("/signup", async (req, res) => {
+    try {
+        await Admin.adminValidation(req.body);
+        //await User.created(req.body);
+        res.redirect("/admin/login");
+    } catch (err) {
+        console.log(err);
+        const errors = [];
+        err.inner.forEach((e) => {
+            errors.push({
+                name: e.path,
+                message: e.message,
             });
         });
+        return res.render("adminSignup", {
+            pageTitle: " ثبت نام بخش مدیریت ",
+            path: "/admin",
+            errors,
+        });
+    }
 });
 
 
 // @desc Dashboard
 // @route GET/dashboard
 router.get("/", (req, res) => {
-    res.render("blogs", {
+    res.render("dashboard", {
         pageTitle: "داشبورد  |  بخش مدیریت ",
         path: "/dashboard",
         layout: "./layouts/dashLayout"
