@@ -1,63 +1,23 @@
-const e = require('express');
-const {
-    Router
-} = require('express');
+const {Router} = require('express');
 
-const Admin = require('../models/admin');
+const adminController = require('../controllers/adminController');
 
 const router = new Router();
 
 // @desc Admin Login Page
 // @route GET/Admin/login
-router.get("/login", (req, res) => {
-    res.render("adminLogin", {
-        pageTitle: "ورود به بخش مدیریت ",
-        path: "/admin"
-    })
-});
+router.get("/login", adminController.login);
 
 // @desc Admin signup Page
 // @route GET/admin/signup
-router.get("/signup", (req, res) => {
-    res.render("adminSignup", {
-        pageTitle: " ثبت نام بخش مدیریت ",
-        path: "/admin"
-    });
-});
+router.get("/signup", adminController.signup);
 
 // @desc Admin Login Page
 // @route POST/admin/signup
-router.post("/signup", async (req, res) => {
-    try {
-        await Admin.adminValidation(req.body);
-        //await User.created(req.body);
-        res.redirect("/admin/login");
-    } catch (err) {
-        console.log(err);
-        const errors = [];
-        err.inner.forEach((e) => {
-            errors.push({
-                name: e.path,
-                message: e.message,
-            });
-        });
-        return res.render("adminSignup", {
-            pageTitle: " ثبت نام بخش مدیریت ",
-            path: "/admin",
-            errors,
-        });
-    }
-});
-
+router.post("/signup", adminController.createAdmin);
 
 // @desc Dashboard
 // @route GET/dashboard
-router.get("/", (req, res) => {
-    res.render("dashboard", {
-        pageTitle: "داشبورد  |  بخش مدیریت ",
-        path: "/dashboard",
-        layout: "./layouts/dashLayout"
-    })
-});
+router.get("/", adminController.getDashboard);
 
 module.exports = router;
