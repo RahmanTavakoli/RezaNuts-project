@@ -10,10 +10,29 @@ exports.login = (req, res) => {
 
 
 
-exports.createUser = async(req , res) => {
+exports.createUser = async (req, res) => {
+    const errors = [];
     try {
         await User.userValidation(req.body);
-        //await User.created(req.body);
+        const {
+            userName,
+            userEmail,
+            userPass
+        } = req.body;
+        const user = await User.findOne({
+            userEmail
+        });
+        if (user) {
+            errors.push({
+                message: "کاربری با این ایمیل موجود است"
+            });
+            return res.render("login", {
+                pageTitle: "ورود / ثبت نام",
+                path: "/user",
+                errors,
+            });
+        }
+        await User.create(req.body);
         res.redirect("/user/login");
     } catch (err) {
         console.log(err);
@@ -24,7 +43,7 @@ exports.createUser = async(req , res) => {
                 message: e.message,
             });
         });
-        return  res.render("login", {
+        return res.render("login", {
             pageTitle: "ورود / ثبت نام",
             path: "/user",
             errors,

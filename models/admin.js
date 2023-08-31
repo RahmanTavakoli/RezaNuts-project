@@ -3,17 +3,17 @@ const mongoose = require('mongoose');
 const { schema } = require('./secure/adminValidation');
 
 const adminSchima = new mongoose.Schema({
-    fullname:{
+    adminName:{
         type: String,
         required: [true, " نام کاربری الزامی است"] ,
         trim: true,
     },
-    email:{
+    adminEmail:{
         type: String,
         required: [true," ایمیل الزامی است"],
         unique: [true ,"ایمیل قبلا ثیت شده است "]
     },
-    password:{
+    adminPass:{
         type: String,
         required: true,
         minlength: 4,

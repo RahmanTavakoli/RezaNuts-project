@@ -3,17 +3,17 @@ const mongoose = require('mongoose');
 const { schema } = require('./secure/userValidation');
 
 const userSchima = new mongoose.Schema({
-    username:{
+    userName:{
         type: String,
         required: true,
         trim: true,
     },
-    email:{
+    userEmail:{
         type: String,
         required: true,
         unique: true
     },
-    password:{
+    userPass:{
         type: String,
         required: true,
         minlength: 4,

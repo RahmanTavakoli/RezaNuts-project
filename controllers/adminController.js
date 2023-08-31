@@ -16,9 +16,25 @@ exports.signup = (req,res) => {
 }
 
 exports.createAdmin = async (req, res) => {
+    const errors = [];
     try {
         await Admin.adminValidation(req.body);
-        //await User.created(req.body);
+       
+        const { adminName , adminEmail , adminPass } = req.body;
+        const admin = await Admin.findOne({
+            adminEmail
+        });
+        if (admin) {
+            errors.push({
+                message: "مدیری با این ایمیل موجود است"
+            });
+            return res.render("adminSignup", {
+                pageTitle: " ثبت نام بخش مدیریت ",
+                path: "/admin",
+                errors
+            });
+        }
+        await Admin.create(req.body);
         res.redirect("/admin/login");
     } catch (err) {
         console.log(err);
