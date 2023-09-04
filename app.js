@@ -4,6 +4,8 @@ const express = require('express');
 const expressLayout = require('express-ejs-layouts');
 const dotEnv = require('dotenv');
 const morgan = require('morgan');
+const flash = require('connect-flash');
+const session = require('express-session');
 
 const ConnectDB = require('./config/db');
 const shopRoutes = require('./routes/routes');
@@ -32,6 +34,17 @@ app.set('views' , 'views');
 //* BodyPaser
 app.use(express.urlencoded({ extended: false }));
 const bodyPaser = require('body-parser');
+
+//*Session
+app.use(session({
+    secret: "secret",
+    cookie: {maxAge: 60000},
+    resave: false,
+    saveUninitialized: false
+}));
+
+//*Flash
+app.use(flash()); //req.flash
 
 //* static folder
 app.use(express.static(path.join(__dirname,"public")));

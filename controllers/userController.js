@@ -1,10 +1,13 @@
+const bcrypt = require('bcryptjs');
+
 const User = require('../models/user');
 
 
 exports.login = (req, res) => {
     res.render("login", {
         pageTitle: "ورود / ثبت نام",
-        path: "/user"
+        path: "/user",
+        successMsg: req.flash("success_msg")
     })
 };
 
@@ -32,8 +35,15 @@ exports.createUser = async (req, res) => {
                 errors,
             });
         }
-        await User.create(req.body);
+        const hash = await bcrypt.hash(userPass, 10);
+        await User.create({
+            userName,
+            userEmail,
+            userPass: hash
+        });
+        req.flash("success_msg" , "ثبت نام با موفقیت انجام شد:)");
         res.redirect("/user/login");
+
     } catch (err) {
         console.log(err);
         const errors = [];

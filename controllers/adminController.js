@@ -1,10 +1,12 @@
+const bcrypt = require('bcryptjs');
 
 const Admin = require('../models/admin');
 
 exports.login = (req,res) => {
     res.render("adminLogin", {
         pageTitle: "ورود به بخش مدیریت ",
-        path: "/admin"
+        path: "/admin",
+        successMsg: req.flash("success_msg")
     })
 }
 
@@ -34,8 +36,16 @@ exports.createAdmin = async (req, res) => {
                 errors
             });
         }
-        await Admin.create(req.body);
+        const hash = await bcrypt.hash(adminPass, 10);
+        await Admin.create({
+            adminName,
+            adminEmail,
+            adminPass: hash
+        });
+        
+        req.flash("success_msg" , " ثبت نام شدی آقای مدیر :) ");
         res.redirect("/admin/login");
+
     } catch (err) {
         console.log(err);
         const errors = [];

@@ -18,5 +18,5 @@ exports.schema = Yup.object().shape({
     userRepass: Yup
         .string()
         .required("تکرار رمز ورود یکسان نیست")
-        .oneOf([Yup.ref("userPass"), null])
+        .oneOf([Yup.ref("userPass"), null , "تکرار رمز ورود یکسان نیست"])
 });

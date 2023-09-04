@@ -14,5 +14,5 @@ exports.schema = Yup.object().shape({
         .max(255, "رمز ورود نباید بیشتر از 255 کاراکتر باشد"),
     adminRepass: Yup.string()
         .required("تکرار رمز ورود یکسان نیست")
-        .oneOf([Yup.ref("adminPass"), null]),
+        .oneOf([Yup.ref("adminPass"), null ,"تکرار رمز ورود یکسان نیست"]),
 });

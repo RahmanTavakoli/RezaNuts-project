@@ -30,6 +30,7 @@ adminSchima.statics.adminValidation = function(body){
     return schema.validate(body,{abortEarly: false })            //چک کردن همه خطا ها
 }
 
+
 const Admin = mongoose.model("Admin" , adminSchima);
 
 module.exports = Admin;
