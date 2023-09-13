@@ -8,6 +8,10 @@ const router = new Router();
 // @route GET/Admin/login
 router.get("/login", adminController.login);
 
+// @desc Admin Handle Login Page
+// @route POST/Admin/login
+router.post("/login", adminController.handleLogin);
+
 // @desc Admin signup Page
 // @route GET/admin/signup
 router.get("/signup", adminController.signup);
@@ -16,8 +20,5 @@ router.get("/signup", adminController.signup);
 // @route POST/admin/signup
 router.post("/signup", adminController.createAdmin);
 
-// @desc Dashboard
-// @route GET/dashboard
-router.get("/", adminController.getDashboard);
 
 module.exports = router;

@@ -12,22 +12,22 @@
                 <div class="signin-form">
                     <h2 class="form-title ">ورود به پنل مدیریت
                     </h2>
-                    <form method="POST" class="register-form" id="login-form">
+                    <form method="POST" action="/admin/login" class="register-form" id="login-form">
                         <div class="form-group">
                             <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="text"  name="your_name" id="your_name" placeholder="نام" />
+                            <input type="text" name="adminEmail" id="your_name" placeholder="ایمیل" />
                         </div>
                         <div class="form-group">
                             <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                            <input type="password"  name="your_pass" id="your_pass" placeholder="رمز عبور" />
+                            <input type="password" name="adminPass" id="your_pass" placeholder="رمز عبور" />
                         </div>
                         <div class="form-group">
-                            <input type="checkbox"  name="remember-me" id="remember-me" class="agree-term" />
+                            <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
                             <label for="remember-me" class="label-agree-term"><span><span></span></span>مرا
                                 به خاطر بسپار</label>
                         </div>
                         <div class="form-group form-button">
-                            <button type="submit"  name="signin" id="signin" class="form-submit" value="">ورود</button>
+                            <button type="submit" name="signin" id="signin" class="form-submit" value="">ورود</button>
                         </div>
                     </form>
                     <!-- <div class="social-login">

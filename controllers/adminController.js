@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs');
+const passport = require('passport');
 
 const Admin = require('../models/admin');
 
@@ -6,8 +7,17 @@ exports.login = (req,res) => {
     res.render("adminLogin", {
         pageTitle: "ورود به بخش مدیریت ",
         path: "/admin",
-        successMsg: req.flash("success_msg")
+        successMsg: req.flash("success_msg"),
+        error: req.flash("error")
     })
+}
+
+exports.handleLogin = (req, res, next) => {
+    passport.authenticate("admin", {
+        successRedirect: "/dashboard",
+        failureRedirect: "/admin/login",
+        failureFlash: true,
+    })(req, res, next);
 }
 
 exports.signup = (req,res) => {
@@ -61,12 +71,4 @@ exports.createAdmin = async (req, res) => {
             errors,
         });
     }
-}
-
-exports.getDashboard = (req, res) => {
-    res.render("dashboard", {
-        pageTitle: "داشبورد  |  بخش مدیریت ",
-        path: "/dashboard",
-        layout: "./layouts/dashLayout"
-    })
 }

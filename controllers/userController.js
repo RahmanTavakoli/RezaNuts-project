@@ -1,15 +1,31 @@
 const bcrypt = require('bcryptjs');
+const passport = require('passport');
 
 const User = require('../models/user');
+const {
+    ensureAdminAuthenticated,
+    ensureUserAuthenticated,
+    isAuthenticated
+} = require('../middleWare/auth');
 
 
 exports.login = (req, res) => {
     res.render("login", {
         pageTitle: "ورود / ثبت نام",
         path: "/user",
-        successMsg: req.flash("success_msg")
+        successMsg: req.flash("success_msg"),
+        error: req.flash("error")
     })
 };
+
+
+exports.handleLogin = (req, res, next) => {
+    passport.authenticate("user", {
+        successRedirect: "/userprofile",
+        failureRedirect: "/user/login",
+        failureFlash: true,
+    })(req, res, next);
+}
 
 
 
@@ -33,6 +49,8 @@ exports.createUser = async (req, res) => {
                 pageTitle: "ورود / ثبت نام",
                 path: "/user",
                 errors,
+                successMsg: req.flash("success_msg"),
+                error: req.flash("error")
             });
         }
         const hash = await bcrypt.hash(userPass, 10);
@@ -41,7 +59,7 @@ exports.createUser = async (req, res) => {
             userEmail,
             userPass: hash
         });
-        req.flash("success_msg" , "ثبت نام با موفقیت انجام شد:)");
+        req.flash("success_msg", "ثبت نام با موفقیت انجام شد:)");
         res.redirect("/user/login");
 
     } catch (err) {
@@ -57,6 +75,23 @@ exports.createUser = async (req, res) => {
             pageTitle: "ورود / ثبت نام",
             path: "/user",
             errors,
+            successMsg: req.flash("success_msg"),
+            error: req.flash("error")
         });
     }
+}
+
+exports.userProfileLogin = (req, res) => {
+    if (req.user instanceof User) {
+        // اجازه دسترسی به داشبورد برای کاربران
+        res.render("userProfile", {
+            pageTitle: " پروفایل  |   کاربر ",
+            path: "/userprofile"
+        })
+    } else {
+        // عدم دسترسی به داشبورد برای مدیران
+        res.redirect("/404");
+    }
+
+    
 }
