@@ -8,16 +8,26 @@ exports.login = (req,res) => {
         pageTitle: "ورود به بخش مدیریت ",
         path: "/admin",
         successMsg: req.flash("success_msg"),
-        error: req.flash("error")
+        error: req.flash("error"),
     })
 }
 
 exports.handleLogin = (req, res, next) => {
     passport.authenticate("admin", {
-        successRedirect: "/dashboard",
+        // successRedirect: "/dashboard",
         failureRedirect: "/admin/login",
         failureFlash: true,
     })(req, res, next);
+}
+
+exports.adminRememberMe = (req, res) => {
+    if(req.body.rememberAdmin){
+        req.session.cookie.originalMaxAge= 1 * 60 * 60 * 1000 // 1 hour
+    }else{
+        req.session.cookie.expire = null
+    }
+
+    res.redirect("/dashboard");
 }
 
 exports.signup = (req,res) => {

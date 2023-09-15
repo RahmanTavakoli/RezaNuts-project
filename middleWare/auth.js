@@ -18,7 +18,7 @@ exports.ensureAdminAuthenticated = (req, res, next) => {
 }
 
 
-
+// میان‌وسیه احراز هویت برای دسترسی به داشبورد کاربر
 exports.ensureUserAuthenticated = (req, res, next) => {
     if (req.isAuthenticated() && req.user.isUser) {
         return next();

@@ -21,13 +21,39 @@ exports.login = (req, res) => {
 
 exports.handleLogin = (req, res, next) => {
     passport.authenticate("user", {
-        successRedirect: "/userprofile",
+        // successRedirect: "/userprofile",
         failureRedirect: "/user/login",
         failureFlash: true,
     })(req, res, next);
 }
 
+exports.UserRememberMe = (req, res) => {
+    if(req.body.rememberUser){
+        req.session.cookie.originalMaxAge= 24 * 60 * 60 * 1000 // 1 day 24 hour
+    }else{
+        req.session.cookie.expire = null
+    }
 
+    res.redirect("/userprofile");
+}
+
+exports.userLogout = (req, res) => {
+    if (req.user instanceof User) {
+        // اlogout جازه دسترسی به کاربران احراز هویت شده به 
+        req.logout(function(err) {
+            if (err) {
+                // مدیریت خطا در صورت وجود خطا
+                console.error(err);
+            }
+            req.flash("success_msg", "خروج موفقیت‌آمیز بود");
+            res.redirect("/user/login");
+        });
+    } else {
+        // عدم دسترسی به خروج برای کاربران احراز هویت نشده
+        res.redirect("/404");
+    }
+   
+}
 
 exports.createUser = async (req, res) => {
     const errors = [];
@@ -86,12 +112,12 @@ exports.userProfileLogin = (req, res) => {
         // اجازه دسترسی به داشبورد برای کاربران
         res.render("userProfile", {
             pageTitle: " پروفایل  |   کاربر ",
-            path: "/userprofile"
+            path: "/userprofile",
+            userName: req.user.userName,
+            userEmail: req.user.userEmail
         })
     } else {
         // عدم دسترسی به داشبورد برای مدیران
         res.redirect("/404");
     }
-
-    
 }

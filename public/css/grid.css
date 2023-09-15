@@ -2058,6 +2058,13 @@ input {
     border-radius: 5px;
 }
 
+.rememberUser{
+    width: 15px!important;
+    height: 15px!important;
+    padding: 0;
+    margin: 5px 0 0 10px ;
+}
+
 button {
     width: 60%;
     height: 40px;
@@ -2478,3 +2485,4 @@ h2 small {
     align-items: center;
     opacity: .4;
 }
+

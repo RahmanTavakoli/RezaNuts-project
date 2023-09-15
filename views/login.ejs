@@ -4,29 +4,33 @@
 			<img src=" /images/reza-nut-logo.png" style="width:100px; height: 100px; margin-top: 70px;" alt="">
 		</a>
 	</div>
-	<div class="main bardia-font m-auto">  	
+	<div class="main bardia-font m-auto">
 		<%- include("./includes/validationError.ejs") %>
 		<%- include("./includes/loginMessage.ejs") %>
 		<input type="checkbox" id="chk" aria-hidden="true">
 
-			<div class="signup">
-				<form method="POST" action="/user/login">
-					<label for="chk" aria-hidden="true"> ورود </label>
-					<input type="email" name="userEmail" placeholder="ایمیل" required="">
-					<input type="password" name="userPass" placeholder="رمز ورود" required="">
-					<button type="submit" class="bardia-font">ورود</button>
-				</form>
-			</div>
-				<!-- نام گزاری کلاس ورود و ثبت نام جابه جا شده -->
-			<div class="login">  
-				<form method="POST" action="/user/signup">
-					<label for="chk" aria-hidden="true">ثبت نام</label>
-					<input type="text" name="userName" placeholder="نام کاربری" required>
-					<input type="email" name="userEmail" placeholder="ایمیل" required>
-					<input type="password" name="userPass" placeholder="رمز ورود" required>
-					<input type="password" name="userRepass" placeholder="تکرار رمز ورود" required>
-					<button type="submit" class="bardia-font">ثبت نام</button>
-				</form>
-			</div>
+		<div class="signup">
+			<form method="POST" action="/user/login">
+				<label for="chk" aria-hidden="true"> ورود </label>
+				<input type="email" name="userEmail" placeholder="ایمیل" required="">
+				<input type="password" name="userPass" placeholder="رمز ورود" required="">
+				<div class="d-flex justify-content-center">
+					<input type="checkbox" name="rememberUser" id="remember-me" class="rememberUser" />
+					<label for="remember-me" class="fs-6 m-0 text-black-50">منو یادت باشه</label>
+				</div>
+				<button type="submit" class="bardia-font">ورود</button>
+			</form>
+		</div>
+		<!-- نام گزاری کلاس ورود و ثبت نام جابه جا شده -->
+		<div class="login">
+			<form method="POST" action="/user/signup">
+				<label for="chk" aria-hidden="true">ثبت نام</label>
+				<input type="text" name="userName" placeholder="نام کاربری" required>
+				<input type="email" name="userEmail" placeholder="ایمیل" required>
+				<input type="password" name="userPass" placeholder="رمز ورود" required>
+				<input type="password" name="userRepass" placeholder="تکرار رمز ورود" required>
+				<button type="submit" class="bardia-font">ثبت نام</button>
+			</form>
+		</div>
 	</div>
 </div>

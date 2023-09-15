@@ -16,7 +16,11 @@ router.get("/login", userController.login);
 
 // @desc Login Handle
 // @route post/user/login
-router.post("/login", userController.handleLogin);
+router.post("/login", userController.handleLogin, userController.UserRememberMe);
+
+// @desc Logout Handle
+// @route Get /user/logout
+router.get("/logout",isAuthenticated, userController.userLogout);
 
 // @desc signup handle
 // @route POST/user/login

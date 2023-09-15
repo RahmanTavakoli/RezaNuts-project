@@ -10,7 +10,7 @@ router.get("/login", adminController.login);
 
 // @desc Admin Handle Login Page
 // @route POST/Admin/login
-router.post("/login", adminController.handleLogin);
+router.post("/login", adminController.handleLogin, adminController.adminRememberMe);
 
 // @desc Admin signup Page
 // @route GET/admin/signup
