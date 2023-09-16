@@ -1,5 +1,6 @@
 const path = require('path');
 
+const debug = require('debug')("rezaNut-project");
 const express = require('express');
 const mongoose = require('mongoose');
 const expressLayout = require('express-ejs-layouts');
@@ -24,6 +25,7 @@ dotEnv.config({
 
 //* Database connction
 ConnectDB();
+debug("Connected To Database");
 
 //*Passport configuration
 require('./config/passportStrategies');
@@ -32,6 +34,7 @@ const app = express();
 
 //* Logging
 if (process.env.NODE_ENV === "development") {
+    debug("Morgan Enabaled")
     app.use(morgan("dev"));
 }
 
