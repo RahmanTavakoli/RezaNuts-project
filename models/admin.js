@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 const { schema } = require('./secure/adminValidation');
 
@@ -29,6 +30,18 @@ const adminSchima = new mongoose.Schema({
 adminSchima.statics.adminValidation = function(body){
     return schema.validate(body,{abortEarly: false })            //چک کردن همه خطا ها
 }
+
+adminSchima.pre("save" , function(next){          // عملیات هش کردن پسورد قبل از ذخیره در پایگاه داده
+    let admin = this; 
+
+    if(!admin.isModified("adminPass")) return next();
+
+    bcrypt.hash(admin.adminPass , 10 , (err, hash)=>{        
+        if(err) return next(err);
+        admin.adminPass = hash;
+        next();
+    })
+})
 
 
 const Admin = mongoose.model("Admin" , adminSchima);

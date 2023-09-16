@@ -1,4 +1,4 @@
-const bcrypt = require('bcryptjs');
+//const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
 const Admin = require('../models/admin');
@@ -56,11 +56,16 @@ exports.createAdmin = async (req, res) => {
                 errors
             });
         }
-        const hash = await bcrypt.hash(adminPass, 10);
+        // const hash = await bcrypt.hash(adminPass, 10);
+        // await Admin.create({
+        //     adminName,
+        //     adminEmail,
+        //     adminPass: hash
+        // });
         await Admin.create({
             adminName,
             adminEmail,
-            adminPass: hash
+            adminPass
         });
         
         req.flash("success_msg" , " ثبت نام شدی آقای مدیر :) ");

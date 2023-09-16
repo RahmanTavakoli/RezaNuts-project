@@ -1,4 +1,4 @@
-const bcrypt = require('bcryptjs');
+// const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
 const User = require('../models/user');
@@ -28,9 +28,9 @@ exports.handleLogin = (req, res, next) => {
 }
 
 exports.UserRememberMe = (req, res) => {
-    if(req.body.rememberUser){
-        req.session.cookie.originalMaxAge= 24 * 60 * 60 * 1000 // 1 day 24 hour
-    }else{
+    if (req.body.rememberUser) {
+        req.session.cookie.originalMaxAge = 24 * 60 * 60 * 1000 // 1 day 24 hour
+    } else {
         req.session.cookie.expire = null
     }
 
@@ -40,7 +40,7 @@ exports.UserRememberMe = (req, res) => {
 exports.userLogout = (req, res) => {
     if (req.user instanceof User) {
         // اlogout جازه دسترسی به کاربران احراز هویت شده به 
-        req.logout(function(err) {
+        req.logout(function (err) {
             if (err) {
                 // مدیریت خطا در صورت وجود خطا
                 console.error(err);
@@ -52,7 +52,7 @@ exports.userLogout = (req, res) => {
         // عدم دسترسی به خروج برای کاربران احراز هویت نشده
         res.redirect("/404");
     }
-   
+
 }
 
 exports.createUser = async (req, res) => {
@@ -79,11 +79,12 @@ exports.createUser = async (req, res) => {
                 error: req.flash("error")
             });
         }
-        const hash = await bcrypt.hash(userPass, 10);
+        // const hash = await bcrypt.hash(userPass, 10);
+        // await User.create({userName,userEmail,userPass: hash});
         await User.create({
             userName,
             userEmail,
-            userPass: hash
+            userPass
         });
         req.flash("success_msg", "ثبت نام با موفقیت انجام شد:)");
         res.redirect("/user/login");
