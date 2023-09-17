@@ -12,6 +12,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
 const ConnectDB = require('./config/db');
+const winston = require('./config/winston');
 const shopRoutes = require('./routes/routes');
 const userProfileRoutes = require('./routes/userProfile');
 const adminProfileRoutes = require('./routes/adminProfile');
@@ -27,6 +28,7 @@ dotEnv.config({
 ConnectDB();
 debug("Connected To Database");
 
+
 //*Passport configuration
 require('./config/passportStrategies');
 
@@ -35,7 +37,7 @@ const app = express();
 //* Logging
 if (process.env.NODE_ENV === "development") {
     debug("Morgan Enabaled")
-    app.use(morgan("dev"));
+    app.use(morgan("combined" , {stream: winston.stream}));
 }
 
 //* view Engine 
