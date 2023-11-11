@@ -76,6 +76,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //* Routes
 app.use(shopRoutes);
+app.use("/products", shopRoutes);
 app.use("/user", userProfileRoutes);
 app.use("/admin", adminProfileRoutes);
 app.use("/dashboard", adminDashboardRoutes);

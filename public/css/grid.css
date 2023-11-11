@@ -2510,3 +2510,24 @@ h2 small {
     opacity: .4;
 }
 
+/* --------------------------------------AboutUs----------------------------------- */
+
+
+.aboutUs-En-title {
+    font-family: "monoton";
+    font-size: 4rem;
+    width: 100vw;
+}
+.aboutUs-title {
+    font-family: myfont !important;
+    font-size:5rem;
+    width: 100vw;
+}
+
+.help-aboutUs{
+    border-radius: 30px;
+    background-color: rgba(58, 135, 89, 0.134);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+

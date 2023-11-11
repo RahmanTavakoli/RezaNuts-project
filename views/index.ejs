@@ -1,6 +1,116 @@
-    <%- include("./includes/header.ejs") %>
-     <!-- Main -->
-     <main class="overflow-hidden main-border">
+    <%- include("./includes/fixedbutton.ejs") %>
+    <!-- Hero -->
+    <section class="hero overflow-hidden" id="header">
+        <div class="navbar-space">
+            <!-- search box D-NONE-->
+            <div class="search-box position-relative d-none">;
+                <div>
+                    <input type="text" class="form-control search-box-input position-absolute" placeholder="... جستجو">
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg d-flex justify-content-end ">
+                <div>
+                    <!-- shopping card and login & sign up D-NONE-->
+                    <div class="shopingCard d-flex mt-5 d-none">
+                        <a href="#" class="text-black my-auto">
+                            <i class='fa fa-shopping-cart blue-color fs-5'>
+                            </i>
+                            <span
+                                class="position-absolute top-30 start-10 translate-middle badge shopping-cart-badge rounded-pill bg-danger">
+                                3
+                            </span>
+                        </a>
+
+                        <div class="divider-line mx-4"></div>
+                        <!-- login & Register -->
+                        <a href="#" class="d-flex text-decoration-none text-black login-link">
+                            <p> ورود </p>
+                            <div class="divider-line"></div>
+                            <p> ثبت نام</p>
+                            <i class='fa fa-sign-in fs-5 ms-2'></i>
+                        </a>
+                        <!-- End login & Register -->
+                        <!-- user circle icon -->
+                        <span class="userProfile  d-none">
+                            <span>
+                                <i class="fas fa-user-circle text-black fs-4"></i>
+                            </span>
+
+                            <div class="body" dir="rtl">
+                                <ul class="user-Profile-link">
+                                    <li><a href="#" class="user-dropdown-menu"><i
+                                                class="fas fa-sign icon ms-3 "></i>پروفایل
+                                        </a>
+                                    </li>
+                                    <li><a href="#" class="user-dropdown-menu"><i
+                                                class="fas fa-bar-chart ms-3 icon"></i>
+                                            آمار
+                                        </a>
+                                    </li>
+                                    <li><a href="#" class="user-dropdown-menu"><i class="fas fa-boxes ms-3 icon"></i>
+                                            ویجت ها</a></li>
+                                    <li><a href="#" class="user-dropdown-menu"><i
+                                                class="fas fa-table ms-3 icon"></i>جداول
+                                        </a>
+                                    </li>
+                                    <li><a href="#" class="user-dropdown-menu"><i class="fa fa-cogs ms-3 icon"></i>
+                                            تنظیمات
+                                        </a>
+                                    </li>
+                                    <li><a href="#" class="user-dropdown-menu"><i
+                                                class="fas fa-sign-out  ms-3 icon"></i>
+                                            خروج
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </span>
+                        <!-- End user circle icon -->
+                    </div>
+                    <!-- logo -->
+                    <div class="hero-logo d-none d-lg-block">
+                        <a href="/">
+                            <img src="/images/reza-nut-logo.png" style="width:100px; height: 100px;" alt="">
+                        </a>
+                    </div>
+                </div>
+                <!-- Header -->
+                <%- include("./includes/header.ejs") %>
+                <!-- End Header -->
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="20">
+                <div class="d-flex header-content">
+                    <div class="header-text-content  m-5">
+                        <p class="hero-text-L1 text-uppercase text-white opacity-75">مرکز بخش خشکبار رضا - از تولید به
+                            مصرف</p>
+                        <br>
+                        <p class="hero-text-L1 text-uppercase text-white opacity-75"> به صورت عمده و خرده</p>
+                        <h1 class="text-white text-center space-title">خشکبار رضا</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swipeDownbtn con-tooltip top">
+            <div class="tooltip fs-5">
+                <p>محصولات ما</p>
+            </div>
+            <a href="#product">
+                <div class="indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </a>
+        </div>
+    </section>
+    <!-- End Hero -->
+
+    <!-- Main -->
+    <main class="overflow-hidden main-border">
 
         <div class="product py-5">
             <!-- main title -->
@@ -16,7 +126,7 @@
             <div class="row mx-3 ">
                 <!-- product Title -->
                 <div class="product-category nuts col-12 col-lg-6 col-xl-3  my-0 my-md-3">
-                    <a href="pistachio.html">
+                    <a href="/products/pistachio">
                         <div class="card row">
                             <div class="p-3 ms-5 col-4">
                                 <p class="my-auto product-category-title"> انواع خشکبار</p>
@@ -30,14 +140,13 @@
                 <!-- End product Title -->
                 <!-- product Title -->
                 <div class="product-category nuts col-12 col-lg-6 col-xl-3  my-0 my-md-3">
-                    <a href="dryFruits.html">
+                    <a href="/products/dryFruits">
                         <div class="card row">
                             <div class="p-3 ms-5 col-4">
                                 <p class="my-auto product-category-title"> میوه خشک و تنقلات </p>
                             </div>
                             <div class="col-8">
-                                <img class="product-category-img-dried-fruit" src="/images/dried-fruits.png"
-                                    alt="">
+                                <img class="product-category-img-dried-fruit" src="/images/dried-fruits.png" alt="">
                             </div>
                         </div>
                     </a>
@@ -45,7 +154,7 @@
                 <!-- End product Title -->
                 <!-- product Title -->
                 <div class="product-category nuts col-12 col-lg-6 col-xl-3  my-0 my-md-3">
-                    <a href="chocolate.html">
+                    <a href="/products/chocolate">
                         <div class="card row">
                             <div class="p-3 ms-5 col-4">
                                 <p class="my-auto product-category-title"> شکلات </p>
@@ -65,8 +174,8 @@
                                 <p class="my-auto product-category-title"> انواع پاستیل</p>
                             </div>
                             <div class="col-8">
-                                <img class="product-category-img-gummy"
-                                    src="/images/output-onlinepngtools (4).png" alt="">
+                                <img class="product-category-img-gummy" src="/images/output-onlinepngtools (4).png"
+                                    alt="">
                             </div>
                         </div>
                     </a>
@@ -92,7 +201,7 @@
                     <div class="swiper-slide">
                         <div class="container">
                             <div class="card pistachio">
-                                <a href="pistachio.html" class="imgBx">
+                                <a href="/products/pistachio" class="imgBx">
                                     <img src="/images/pistachio-nuts.png">
                                 </a>
                                 <div class="contentBx">
@@ -123,7 +232,9 @@
                                         </svg>
                                         <div class="popup-text">
 
-                                            پسته دارای پروتئین، فیبر، ویتامین‌ها و مواد معدنی مختلفی از جمله ویتامین E، ویتامین B6، فسفر، منیزیم، پتاسیم و آهن است. همچنین دارای چربی‌های سالم می باشد
+                                            پسته دارای پروتئین، فیبر، ویتامین‌ها و مواد معدنی مختلفی از جمله ویتامین E،
+                                            ویتامین B6، فسفر، منیزیم، پتاسیم و آهن است. همچنین دارای چربی‌های سالم می
+                                            باشد
                                             مغز پسته به علت داشتن آهن خون ساز است و آنهایی که مبتلا به کم خونی هستند
                                             باید حتما روزانه مقداری پسته بخورند.
 
@@ -131,7 +242,7 @@
                                         </div>
                                     </div>
                                     <h2 class="my-3">پسته</h2>
-                                    <a href="pistachio.html"> مشاهده </a>
+                                    <a href="/products/pistachio"> مشاهده </a>
                                 </div>
                             </div>
                         </div>
@@ -141,7 +252,7 @@
                     <div class="swiper-slide">
                         <div class="container">
                             <div class="card walnut">
-                                <a href="walnuts.html" class="imgBx">
+                                <a href="/products/walnuts" class="imgBx">
                                     <img src="/images/walnuts.png">
                                 </a>
                                 <div class="contentBx">
@@ -171,11 +282,14 @@
                                             </g>
                                         </svg>
                                         <div class="popup-text">
-                                            حاوی چربی‌های ناساتوره (چربی‌های خوبی که به بدن انرژی می‌دهند)، پروتئین، فیبر، و ویتامین‌ها و مواد معدنی مختلفی همچون ویتامین E، ویتامین B6، منگنز، مس، و آهن هستند. مصرف معقولی از گردو ممکن است به سلامتی قلب، کاهش التهابات، تقویت سیستم ایمنی، و حتی بهبود عملکرد مغز کمک کند.
+                                            حاوی چربی‌های ناساتوره (چربی‌های خوبی که به بدن انرژی می‌دهند)، پروتئین،
+                                            فیبر، و ویتامین‌ها و مواد معدنی مختلفی همچون ویتامین E، ویتامین B6، منگنز،
+                                            مس، و آهن هستند. مصرف معقولی از گردو ممکن است به سلامتی قلب، کاهش التهابات،
+                                            تقویت سیستم ایمنی، و حتی بهبود عملکرد مغز کمک کند.
                                         </div>
                                     </div>
                                     <h2 class="my-3"> گردو </h2>
-                                    <a href="walnuts.html"> مشاهده </a>
+                                    <a href="/products/walnuts"> مشاهده </a>
                                 </div>
                             </div>
                         </div>
@@ -185,7 +299,7 @@
                     <div class="swiper-slide">
                         <div class="container">
                             <div class="card almonds">
-                                <a href="almonds.html" class="imgBx">
+                                <a href="/products/almonds" class="imgBx">
                                     <img src="/images/Almond.png">
                                 </a>
                                 <div class="contentBx">
@@ -215,10 +329,13 @@
                                             </g>
                                         </svg>
                                         <div class="popup-text" dir="rtl">
-                                            بادام‌ها منبع خوبی از مواد مغذی مانند ویتامین E، فیبر، پروتئین و چربی‌های نیمه‌اشباع و پلی‌اشباع هستند که به سلامتی قلب، پوست و سیستم ایمنی بدن کمک می‌کنند. همچنین، بادام‌ها می‌توانند به بهبود سلامتی مغز و کاهش خطر برخی بیماری‌ها مانند دیابت کمک کنند. </div>
+                                            بادام‌ها منبع خوبی از مواد مغذی مانند ویتامین E، فیبر، پروتئین و چربی‌های
+                                            نیمه‌اشباع و پلی‌اشباع هستند که به سلامتی قلب، پوست و سیستم ایمنی بدن کمک
+                                            می‌کنند. همچنین، بادام‌ها می‌توانند به بهبود سلامتی مغز و کاهش خطر برخی
+                                            بیماری‌ها مانند دیابت کمک کنند. </div>
                                     </div>
                                     <h2 class="my-3">بادام درختی </h2>
-                                    <a href="almonds.html"> مشاهده </a>
+                                    <a href="/products/almonds"> مشاهده </a>
                                 </div>
                             </div>
                         </div>
@@ -228,7 +345,7 @@
                     <div class="swiper-slide">
                         <div class="container">
                             <div class="card cashew">
-                                <a href="almonds.html#product-btn-1" class="imgBx">
+                                <a href="/products/almonds#product-btn-1" class="imgBx">
                                     <img src="/images/cashews.png">
                                 </a>
                                 <div class="contentBx">
@@ -258,12 +375,14 @@
                                             </g>
                                         </svg>
                                         <div class="popup-text">
-                                            بادام هندی حاوی کربوهیدرات و فیبر است که به عنوان منبع انرژی طبیعی برای بدن عمل می‌کند و احساس پرانرژی و سرزندگی را افزایش می‌دهد.
-                                            بادام هندی حاوی مقدار قابل توجهی آهن است که برای تقویت سیستم ایمنی و پیشگیری از کم‌خونی مفید است.
-                                         </div>
+                                            بادام هندی حاوی کربوهیدرات و فیبر است که به عنوان منبع انرژی طبیعی برای بدن
+                                            عمل می‌کند و احساس پرانرژی و سرزندگی را افزایش می‌دهد.
+                                            بادام هندی حاوی مقدار قابل توجهی آهن است که برای تقویت سیستم ایمنی و پیشگیری
+                                            از کم‌خونی مفید است.
+                                        </div>
                                     </div>
                                     <h2 class="my-3"> بادام هندی </h2>
-                                    <a href="almonds.html#product-btn-1">مشاهده</a>
+                                    <a href="/products/almonds#product-btn-1">مشاهده</a>
                                 </div>
                             </div>
                         </div>
@@ -273,7 +392,7 @@
                     <div class="swiper-slide">
                         <div class="container">
                             <div class="card peanut">
-                                <a href="almonds.html#product-btn-5" class="imgBx">
+                                <a href="/products/almonds#product-btn-5" class="imgBx">
                                     <img src="/images/peanut.png">
                                 </a>
                                 <div class="contentBx">
@@ -303,11 +422,13 @@
                                             </g>
                                         </svg>
                                         <div class="popup-text">
-                                            بادام زمینی منبع خوبی از پروتئین، چربی‌های نیمه اشباع شده، فیبر، و ویتامین‌ها و مواد معدنی مختلف از جمله ویتامین E، ویتامین B6، منیزیم، مس، فسفر و منگنز است. 
+                                            بادام زمینی منبع خوبی از پروتئین، چربی‌های نیمه اشباع شده، فیبر، و
+                                            ویتامین‌ها و مواد معدنی مختلف از جمله ویتامین E، ویتامین B6، منیزیم، مس،
+                                            فسفر و منگنز است.
                                         </div>
                                     </div>
                                     <h2 class="my-3">بادام زمینی</h2>
-                                    <a href="almonds.html#product-btn-5">مشاهده</a>
+                                    <a href="/products/almonds#product-btn-5">مشاهده</a>
                                 </div>
                             </div>
                         </div>
@@ -317,7 +438,7 @@
                     <div class="swiper-slide">
                         <div class="container">
                             <div class="card hazelnuts">
-                                <a href="hazelnuts.html" class="imgBx">
+                                <a href="/products/hazelnuts" class="imgBx">
                                     <img src="/images/hazelnuts.png">
                                 </a>
                                 <div class="contentBx">
@@ -353,7 +474,7 @@
                                             مواد معدنی نظیر کلسیم، فسفر و آهن است. </div>
                                     </div>
                                     <h2 class="my-3">فندوق</h2>
-                                    <a href="hazelnuts.html">مشاهده</a>
+                                    <a href="/products/hazelnuts">مشاهده</a>
                                 </div>
                             </div>
                         </div>
@@ -363,7 +484,7 @@
                     <div class="swiper-slide">
                         <div class="container">
                             <div class="card sunflower-seeds">
-                                <a href="seeds.html#product-btn-1" class="imgBx">
+                                <a href="/products/seeds#product-btn-1" class="imgBx">
                                     <img src="/images/sunflower-seeds.png">
                                 </a>
                                 <div class="contentBx">
@@ -398,7 +519,7 @@
                                             پروتئین، اسیدهای چرب لینوئیک و چندین ترکیب گیاهی دیگر است.</div>
                                     </div>
                                     <h2 class="my-3">تخمه افتاب گردان</h2>
-                                    <a href="seeds.html#product-btn-1">مشاهده</a>
+                                    <a href="/products/seeds#product-btn-1">مشاهده</a>
                                 </div>
                             </div>
                         </div>
@@ -408,7 +529,7 @@
                     <div class="swiper-slide">
                         <div class="container">
                             <div class="card seeds">
-                                <a href="seeds.html#product-btn-4" class="imgBx">
+                                <a href="/products/seeds#product-btn-4" class="imgBx">
                                     <img src="/images/seeds.png">
                                 </a>
                                 <div class="contentBx">
@@ -445,7 +566,7 @@
                                         </div>
                                     </div>
                                     <h2 class="my-3">تخمه کدو</h2>
-                                    <a href="seeds.html#product-btn-4">مشاهده</a>
+                                    <a href="/products/seeds#product-btn-4">مشاهده</a>
                                 </div>
                             </div>
                         </div>
@@ -455,7 +576,7 @@
                     <div class="swiper-slide">
                         <div class="container">
                             <div class="card chickPeas">
-                                <a href="chickpeas.html" class="imgBx">
+                                <a href="/products/chickpeas" class="imgBx">
                                     <img src="/images/chickPeas.png">
                                 </a>
                                 <div class="contentBx">
@@ -492,7 +613,7 @@
                                         </div>
                                     </div>
                                     <h2 class="my-3"> نخودچی </h2>
-                                    <a href="chickpeas.html">مشاهده</a>
+                                    <a href="/products/chickpeas">مشاهده</a>
                                 </div>
                             </div>
                         </div>
@@ -502,7 +623,7 @@
                     <div class="swiper-slide">
                         <div class="container">
                             <div class="card khorma">
-                                <a href="dates.html" class="imgBx">
+                                <a href="/products/dates" class="imgBx">
                                     <img src="/images/khorma.png">
                                 </a>
                                 <div class="contentBx">
@@ -534,11 +655,12 @@
                                         <div class="popup-text" dir="rtl">خرما به‌طور طبیعی سرشار از ویتامین‌های B6، آ و
                                             کا است‌. این ویتامین‌ها به رشد استخوان‌ها و بهبود سلامت چشم‌ها کمک می‌کنند.
                                             فیبر موجود در خرما سلامت روده را بهبود می‌دهد و به‌طور طبیعی میزان کلسترول
-                                            را کاهش می‌دهد. خرما خشک حاوی مقادیر معتدلی آهن است که می‌تواند به پیشگیری از کم‌خونی و بهبود عملکرد سیستم ایمنی بدن کمک کند.
+                                            را کاهش می‌دهد. خرما خشک حاوی مقادیر معتدلی آهن است که می‌تواند به پیشگیری
+                                            از کم‌خونی و بهبود عملکرد سیستم ایمنی بدن کمک کند.
                                         </div>
                                     </div>
                                     <h2 class="my-3"> خرما </h2>
-                                    <a href="dates.html">مشاهده</a>
+                                    <a href="/products/dates">مشاهده</a>
                                 </div>
                             </div>
                         </div>
@@ -548,7 +670,7 @@
                     <div class="swiper-slide">
                         <div class="container">
                             <div class="card fig">
-                                <a href="figs-Mulberry.html#product-btn-1" class="imgBx">
+                                <a href="/products/figsMulberry#product-btn-1" class="imgBx">
                                     <img src="/images/dried-figs.png">
                                 </a>
                                 <div class="contentBx">
@@ -578,13 +700,14 @@
                                             </g>
                                         </svg>
                                         <div class="popup-text" dir="rtl">
-                                            دارای مواد معدنی مهمی همچون پتاسیم، منیزیم، فسفر و کلسیم است. سطح بالای پتاسیم و سطح پایین سدیم برای
+                                            دارای مواد معدنی مهمی همچون پتاسیم، منیزیم، فسفر و کلسیم است. سطح بالای
+                                            پتاسیم و سطح پایین سدیم برای
                                             افرادی که دارای فشار خون بالای هستند مناسب است. انجیر خشک منبع خوب کلسیم:
                                             کلسیم بالای موجود در انجیر باعث افزایش سلامتی استخوان‌ها می‌شود.
                                         </div>
                                     </div>
                                     <h2 class="my-3"> انجیر خشک </h2>
-                                    <a href="figs-Mulberry.html#product-btn-1">مشاهده</a>
+                                    <a href="/products/figsMulberry#product-btn-1">مشاهده</a>
                                 </div>
                             </div>
                         </div>
@@ -594,7 +717,7 @@
                     <div class="swiper-slide">
                         <div class="container">
                             <div class="card raisins">
-                                <a href="rassins.html" class="imgBx">
+                                <a href="/products/raissins" class="imgBx">
                                     <img src="/images/raisins.png">
                                 </a>
                                 <div class="contentBx">
@@ -630,7 +753,7 @@
                                         </div>
                                     </div>
                                     <h2 class="my-3"> کشمش و مویز </h2>
-                                    <a href="rassins.html">مشاهده</a>
+                                    <a href="/products/raissins">مشاهده</a>
                                 </div>
                             </div>
                         </div>
@@ -660,14 +783,14 @@
                 <div class="hid-box">
                     <div class="row justify-content-around mt-5">
                         <div class="col-5 col-md-4 col-lg-3 my-auto mx-auto">
-                            <a href="mixednuts.html#product-btn-1">
+                            <a href="/products/mixednuts#product-btn-1">
                                 <img src="/images/mixed-nut-without-seeds.png" class="img-fluid" alt="">
                                 <p class="text-white text-center fs-3">آجیل های مغز</p>
                             </a>
                         </div>
                         <div class="divider"></div>
                         <div class="col-5 col-md-4 col-lg-3 my-auto mx-auto">
-                            <a href="mixednuts.html#product-btn-2">
+                            <a href="/products/mixednuts#product-btn-2">
                                 <img src="/images/mixed-nut-with-seeds.png" class="img-fluid" alt="">
                                 <p class="text-white text-center fs-3">آجیل های تخمه دار</p>
                             </a>
@@ -717,11 +840,13 @@
                                 <i class="fab fa-android fs-1"></i>
                                 <p class="fs-1">شبکه های اجتمایی</p>
                                 <div class="m-2">
-                                    <a href="https://t.me/I_love_karbala" class="social-media-link "><i class="fab fa-telegram "></i>
+                                    <a href="https://t.me/I_love_karbala" class="social-media-link "><i
+                                            class="fab fa-telegram "></i>
                                         Telegram</a>
                                 </div>
                                 <div class="m-2">
-                                    <a href="https://instagram.com/khoshkbar_reza98?igshid=OGQ5ZDc2ODk2ZA==" class="social-media-link "><i class="fab fa-instagram "></i>
+                                    <a href="https://instagram.com/khoshkbar_reza98?igshid=OGQ5ZDc2ODk2ZA=="
+                                        class="social-media-link "><i class="fab fa-instagram "></i>
                                         khoshkbar_reza</a>
                                 </div>
                                 <div class="m-2">
@@ -729,7 +854,8 @@
                                             class="fab fa-whatsapp m-1"></i>khoshkbar_reza</a>
                                 </div>
                                 <div class="m-2">
-                                    <a href="mailto:rahmanxrf@gmail.com" class="social-media-link "><i class="fa fa-envelope "></i>
+                                    <a href="mailto:rahmanxrf@gmail.com" class="social-media-link "><i
+                                            class="fa fa-envelope "></i>
                                         KoshkbarReza@Gmail.com</a>
                                 </div>
 
