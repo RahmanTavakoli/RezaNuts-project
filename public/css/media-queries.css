@@ -1,36 +1,53 @@
 @media (max-width: 576px) {
     .hero {
-        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../images/set-pecan-pistachios-almond-peanut-cashew-pine-nuts-lined-up-assorted-nuts-dried-fruits-mini-different-bowls.jpg') center/cover no-repeat;
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../images/set-pecan-pistachios-almond-peanut-cashew-pine-nuts-lined-up-assorted-nuts-dried-fruitsi-different-bowls.jpg') center/cover no-repeat;
         height: 100vh;
     }
 
     .header-content {
         margin-top: 10px;
+    }
+
+    .aboutUs-En-title-content {
+        margin-top: 100px;
+    }
+
+    .aboutUs-title-content {
+        margin-top: 90px;
     }
 
     .shopingCard {
         top: -46px;
     }
-    
+
 }
 
 @media (min-width: 576px) {
     .hero {
-        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../images/set-pecan-pistachios-almond-peanut-cashew-pine-nuts-lined-up-assorted-nuts-dried-fruits-mini-different-bowls.jpg') center/cover no-repeat;
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../images/set-pecan-pistachios-almond-peanut-cashew-pine-nuts-lined-up-assorted-nuts-dried-fruitsi-different-bowls.jpg') center/cover no-repeat;
         height: 100vh;
     }
-    
+
 
     .header-content {
         margin-top: 10px;
     }
+
+    .aboutUs-En-title-content {
+        margin-top: 100px;
+    }
+
+    .aboutUs-title-content {
+        margin-top: 90px;
+    }
+
     .shopingCard {
-        top: -46px!important;
+        top: -46px !important;
     }
 }
 
 /* Medium devices (tablets, 768px and down) */
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
     .hid-box {
         bottom: 0;
         position: relative;
@@ -40,16 +57,16 @@
         width: 100%;
     }
 
-    .divider{
+    .divider {
         height: 30vh;
     }
 
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     .hero {
-        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(2, 2, 2, 0.25)), url('../images/set-pecan-pistachios-almond-peanut-cashew-pine-nuts-lined-up-assorted-nuts-dried-fruits-mini-different-bowls.jpg') center/cover no-repeat;
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(2, 2, 2, 0.25)), url('../images/set-pecan-pistachios-almond-peanut-cashew-pine-nuts-lined-up-assorted-nuts-dried-fruitsi-different-bowls.jpg') center/cover no-repeat;
         height: 100vh;
     }
 
@@ -60,17 +77,36 @@
     .header-content {
         margin-top: 10px;
     }
+
+    .aboutUs-En-title-content {
+        margin-top: 30px;
+    }
+
+    .aboutUs-title-content {
+        margin-top: 60px;
+    }
+
+    .aboutUs-En-title {
+        font-size: 5rem;
+    }
+
+    .aboutUs-title {
+        font-size: 8rem;
+    }
+
     .shopingCard {
-        top: -50px!important;
+        top: -80px !important;
     }
 
     .space-title {
         font-size: 8rem;
         font-family: myfont;
     }
+
     .cd-main-content {
         padding-top: 70px;
     }
+
     header {
         height: 70px;
     }
@@ -107,6 +143,62 @@
         margin: 20px 0;
     }
 
+    .pistachio-page-hero {
+        height: 35vh;
+    }
+
+    .almond-page-hero {
+        height: 35vh;
+    }
+
+    .saffaron-page-hero {
+        height: 35vh;
+    }
+
+    .driFruit-page-hero {
+        height: 35vh;
+    }
+
+    .mixedNuts-page-hero {
+        height: 35vh;
+    }
+
+    .walnut-page-hero {
+        height: 35vh;
+    }
+
+    .seeds-page-hero {
+        height: 35vh;
+    }
+
+    .hamzelnut-page-hero {
+        height: 35vh;
+    }
+
+    .rasins-page-hero {
+        height: 35vh;
+    }
+
+    .figs-page-hero {
+        height: 35vh;
+    }
+
+    .aloo-page-hero {
+        height: 35vh;
+    }
+
+    .dates-page-hero {
+        height: 35vh;
+    }
+
+    .chocolate-page-hero {
+        height: 35vh;
+    }
+
+    .chikpeas-page-hero {
+        height: 35vh;
+    }
+
 }
 
 
@@ -118,7 +210,7 @@
         height: 100vh;
         z-index: -55;
     }
-    
+
     .lg-md-navbar {
         width: 1000px !important;
     }
@@ -133,29 +225,50 @@
         margin-top: 200px;
     }
 
+    .aboutUs-En-title-content {
+        margin-top: 20px;
+    }
+
+    .aboutUs-title-content {
+        margin-top: 40px;
+    }
+
+    .aboutUs-En-title {
+        font-size: 7rem;
+    }
+
+    .aboutUs-title {
+        font-size: 10rem;
+    }
+
     .circle-btn a {
         padding: 110px 70px;
     }
+
     .shopingCard {
-        top: -50px!important;
+        top: -80px !important;
     }
-    .search-box-input{
-        top: 0!important;
-      
+
+    .search-box-input {
+        top: 0 !important;
+
     }
-    .search-box-input:focus{
-        top: 0!important;
+
+    .search-box-input:focus {
+        top: 0 !important;
     }
 
     .hero-text-L1 {
-        font-size: 2rem!important;
+        font-size: 2rem !important;
         font-family: myfont;
     }
+
     .space-title {
         width: 700px;
         font-size: 10rem;
         font-family: myfont;
     }
+
     .product-category .card {
         border-radius: 50px;
         height: 60px;
@@ -169,9 +282,66 @@
         margin: 60px 0;
     }
 
+    .pistachio-page-hero {
+        height: 45vh;
+    }
+
+    .almond-page-hero {
+        height: 45vh;
+    }
+
+    .saffaron-page-hero {
+        height: 45vh;
+    }
+
+    .driFruit-page-hero {
+        height: 45vh;
+    }
+
+    .mixedNuts-page-hero {
+        height: 45vh;
+    }
+
+    .walnut-page-hero {
+        height: 45vh;
+    }
+
+    .seeds-page-hero {
+        height: 45vh;
+    }
+
+    .hamzelnut-page-hero {
+        height: 45vh;
+    }
+
+    .rasins-page-hero {
+        height: 45vh;
+    }
+
+    .figs-page-hero {
+        height: 45vh;
+    }
+
+    .aloo-page-hero {
+        height: 45vh;
+    }
+
+    .dates-page-hero {
+        height: 45vh;
+    }
+
+    .chocolate-page-hero {
+        height: 45vh;
+    }
+
+    .chickpeas-page-hero {
+        height: 45vh;
+    }
+
 }
+
 @media (max-width: 992px) {
-   
+
     .product-category .card {
         border-radius: 50px;
         height: 60px;
@@ -209,25 +379,25 @@
         height: 50px;
         margin: 10px 0;
     }
+
 }
 
 
 
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    
-}
+@media (min-width: 1200px) {}
 
 /* Extra large devices (large desktops, 1400px and up) */
 @media (min-width: 1400px) {
-    .main-border{
+    .main-border {
         width: 1350px;
-       margin: 40px auto;
+        margin: 40px auto;
     }
-    .footer-container{
+
+    .footer-container {
         width: 1400px;
-       margin: 40px auto;
+        margin: 40px auto;
     }
-    
+
 }

@@ -17,22 +17,17 @@
     font-style: normal;
 }
 
-* {
-    font-family: 'bardia', sans-serif;
-}
-
 body{
     background-color: #f6f8fc!important;
+}
+
+* {
+    font-family: 'bardia', sans-serif;
 }
 
 .bardia-font{
     font-family: bardia;
 }
-
-.myFont{
-    font-family: myfont;
-}
-
 .row{
     direction: rtl;
 }
@@ -51,6 +46,10 @@ body{
     box-shadow: rgba(0, 0, 0, 0.055) 0px 4px 12px;
     margin:  20px;
     border-radius: 20px;
+}
+
+.height-100{
+    height: 100vh;
 }
 
 
