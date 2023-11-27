@@ -2,6 +2,7 @@ const path = require('path');
 
 const debug = require('debug')("rezaNut-project");
 const express = require('express');
+const bodyPaser = require('body-parser');
 const mongoose = require('mongoose');
 const expressLayout = require('express-ejs-layouts');
 const passport = require('passport');
@@ -47,10 +48,11 @@ app.set("layout", "./layouts/mainLayout");
 app.set('views', 'views');
 
 //* BodyPaser
-app.use(express.urlencoded({
+app.use(bodyPaser.urlencoded({
     extended: false
 }));
-const bodyPaser = require('body-parser');
+app.use(bodyPaser.json());
+
 
 //*Session
 // تنظیمات session

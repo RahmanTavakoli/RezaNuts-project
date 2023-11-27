@@ -1,5 +1,6 @@
 //const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const fetch = require('node-fetch');
 
 const Admin = require('../models/admin');
 
@@ -12,12 +13,38 @@ exports.login = (req,res) => {
     })
 }
 
-exports.handleLogin = (req, res, next) => {
-    passport.authenticate("admin", {
-        // successRedirect: "/dashboard",
-        failureRedirect: "/admin/login",
-        failureFlash: true,
-    })(req, res, next);
+exports.handleLogin = async (req, res, next) => {
+    if(!req.body['g-recaptcha-response']){
+        req.flash("error" , "اعتبار سنجی recaptcha الزامی میباشد.");
+        return res.redirect("/admin/login")
+    }
+
+    const secretKey = process.env.CAPTCHA_SECRET;
+    const verifyUrl = `https://google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body["g-recaptcha-response"]}
+    &remoteip=${req.connection.remoteAddress}`;
+
+
+    const response = await fetch(verifyUrl, {
+        method: "POST",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+        },
+    });
+
+    const json = await response.json();
+
+    if (json.success) { 
+        passport.authenticate("admin", {
+            failureRedirect: "/admin/login",
+            failureFlash: true,
+        })(req, res, next);
+    } else {
+        req.flash("error", "مشکلی در اعتبارسنجی captcha هست");
+        res.redirect("/admin/login");
+    }
+    
+   
 }
 
 exports.adminRememberMe = (req, res) => {
