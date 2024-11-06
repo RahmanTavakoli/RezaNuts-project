@@ -43,6 +43,4 @@ userSchima.pre("save" , function(next){          // عملیات هش کردن �
     })
 })
 
-const User = mongoose.model("User" , userSchima);
-
-module.exports = User;
+module.exports = mongoose.model("User" , userSchima);

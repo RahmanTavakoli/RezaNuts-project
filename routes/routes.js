@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 });
 //* @desc shop aboutus page
 // @route GET /aboutus
-router.get('/aboutus', (req, res) => {
+router.get('/aboutUs', (req, res) => {
     res.render("aboutUs", {
         pageTitle: "درباره ما",
         path: "/product",

@@ -43,7 +43,4 @@ adminSchima.pre("save" , function(next){          // عملیات هش کردن 
     })
 })
 
-
-const Admin = mongoose.model("Admin" , adminSchima);
-
-module.exports = Admin;
+module.exports =  mongoose.model("Admin" , adminSchima);
